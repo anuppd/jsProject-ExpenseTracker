@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="./output.css" />
+    </head>
+    <body class="h-screen w-screen flex justify-center">
+        <div class="w-[35%]">
+            <h1 class="text-4xl font-bold pt-10 pb-4">Expense Tracker</h1>
+            <form id="expenseForm">
+                <input
+                    type="text"
+                    placeholder="Expense Description"
+                    required
+                    class="w-full bg-gray-200 my-3 h-8 rounded pl-2"
+                    id="description"
+                /><br />
+                <select
+                    name=""
+                    id="category"
+                    required
+                    class="w-full mb-3 h-8 rounded pl-2"
+                >
+                    <option value="">Select category</option>
+                    <option value="food">Food</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="enter">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+                <br />
+                <input
+                    type="number"
+                    placeholder="Amount"
+                    required
+                    class="w-full mb-3 h-8 rounded pl-2 bg-gray-200"
+                    id="amount"
+                />
+                <br />
+                <input
+                    type="submit"
+                    value="Add Expense"
+                    class="bg-blue-900 h-8 text-white w-full rounded transition duration-[250ms] ease-in-out hover:bg-black mb-3"
+                />
+            </form>
+
+            <h2 class="text-2xl font-bold pt-4 mb-3">Expense Summary</h2>
+            <div>
+                <table id="expenseTable" class="w-full border-b-2 border-black">
+                    <thead
+                        class="uppercase text-sm text-left text-gray-500 border-y-2"
+                    >
+                        <tr>
+                            <th class="px-6 py-3">Description</th>
+                            <th class="px-6 py-3">Category</th>
+                            <th class="px-6 py-3">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseList"></tbody>
+                </table>
+            </div>
+            <p class="font-bold mt-3" id="total">Total: 0</p>
+        </div>
+    </body>
+    <script src="./scripts.js"></script>
+</html>
